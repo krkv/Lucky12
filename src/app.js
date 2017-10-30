@@ -11,17 +11,17 @@ class App extends Component {
   }
   addScore (value) {
     this.setState({
-      score: this.state.score + (25 - value)
+      score: this.state.score + (10 - value)
     })
   }
   render () {
     let squares = []
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 25; i++) {
       squares.push(<Square key={i} addScore={this.addScore} />)
     }
     return (
-      <div>
-        <div className='container'>
+      <div className='container'>
+        <div className='field'>
           {squares}
         </div>
         <div className='score'>Score: {this.state.score}</div>

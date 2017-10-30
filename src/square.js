@@ -4,7 +4,7 @@ class Square extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      value: Math.floor(Math.random() * 30) + 5,
+      value: Math.floor(Math.random() * 10) + 3,
       running: true,
       won: false
     }
@@ -30,9 +30,9 @@ class Square extends Component {
       return 'won'
     } else if (!this.state.running) {
       return 'stopped'
-    } else if (this.state.value > 10) {
-      return 'green'
     } else if (this.state.value > 5) {
+      return 'green'
+    } else if (this.state.value > 3) {
       return 'yellow'
     } else {
       return 'red'
