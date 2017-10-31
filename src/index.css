@@ -19,8 +19,8 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 550px;
-  height: 550px;
+  width: 660px;
+  height: 660px;
 }
 
 .square {
@@ -40,6 +40,10 @@ body {
   margin: 10px;
   text-align: center;
   font-size: 36px;
+}
+
+.help {
+  margin: 10px;
 }
 
 .green {
