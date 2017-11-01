@@ -46,19 +46,19 @@ body {
   margin: 10px;
 }
 
-.green {
+.stage-1 {
   background-color: darkgreen
 }
 
-.yellow {
+.stage-2 {
   background-color: darkgoldenrod
 }
 
-.red {
+.stage-3 {
   background-color: darkred
 }
 
-.stopped {
+.lost {
   background-color: darkgrey
 }
 

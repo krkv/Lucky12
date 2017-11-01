@@ -8,6 +8,9 @@ class Square extends Component {
       running: false,
       won: false
     }
+    this.stop = this.stop.bind(this)
+    this.tick = this.tick.bind(this)
+    this.getBackground = this.getBackground.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -34,12 +37,15 @@ class Square extends Component {
   }
 
   tick () {
-    if (this.state.value === 13) {
-      this.stop()
-    } else {
-      this.setState({
-        value: this.state.value + 1
+    if (this.state.value < 12) {
+      this.setState((prevState) => {
+        return {value: prevState.value + 1}
       })
+    } else if (this.state.value === 12) {
+      this.setState({
+        value: 13
+      })
+      this.stop()
     }
   }
 
@@ -47,13 +53,13 @@ class Square extends Component {
     if (this.state.won) {
       return 'won'
     } else if (!this.state.running) {
-      return 'stopped'
+      return 'lost'
     } else if (this.state.value < 7) {
-      return 'green'
+      return 'stage-1'
     } else if (this.state.value < 10) {
-      return 'yellow'
+      return 'stage-2'
     } else {
-      return 'red'
+      return 'stage-3'
     }
   }
 
